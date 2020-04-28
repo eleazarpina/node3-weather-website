@@ -24,7 +24,7 @@ const forecast = (latitude, longitude, callback) => {
         }  else if (body.message) {
             callback(body.message, undefined)
         } else {
-            callback(undefined, body.main.temp)
+            callback(undefined, { temp :body.main.temp, humidity: body.main.humidity } )
         }
     })
 
